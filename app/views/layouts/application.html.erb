@@ -2,12 +2,8 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %> | Ruby on Rails Tutorial Sample App</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <%= render 'layouts/rails-default' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
@@ -42,21 +38,10 @@
   </div>
 </nav>
 </div> -->
-<header class="navbar navbar-fixed-top navbar-inverse">
+<%= render 'layouts/header' %>
 <div class="container">
-<%= link_to "sample app", '#', id: "logo" %>
-<nav>
-<ul class="nav navbar-nav navbar-right">
-<li><%= link_to "Home",'#' %></li>
-<li><%= link_to "Help",'#' %></li>
-<li><%= link_to "Log in", '#' %></li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="container">
-
-</div>
     <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
